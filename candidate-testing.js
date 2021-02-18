@@ -21,33 +21,41 @@ function askForName() {
   // TODO 1.1b: Ask for candidate's name //
 candidateName = input.question('What is your name?:');
 candidateName = String(candidateName);
-console.log(`Hello ${candidateName}!`)
+console.log(`Hello ${candidateName}!`);
 //console.log(`Candidate Name: ${candidateName}`);
 }
 
 
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
-let i = 0
+/*let i = 0
 while ( i < questions.length) {
 candidateAnswers.push(input.question(questions[i]));
 console.log(`Your answer: ${candidateAnswers[i]}`);
-console.log(`Correct Answer: ${correctAnswers[i]}`);
-i++;
+console.log(`Correct Answer: ${correctAnswers[i]}`);*/
+//i++;
+ for ( i=0; i < questions.length; i++) {
+   candidateAnswers[i] = input.question(questions[i])
+ }
 }
-}
+
 
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  console.log(`Candidate Name: ${candidateName}`);
-  
+    
   candidateScore = 0;
   maxScore = 5;
+  console.log(`Candidate Name: ${candidateName}`);
+  
   for (let i = 0; i < correctAnswers.length; i++) {
-    if (candidateAnswers[i] === correctAnswers[i]) {
+    if (candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()) {
       candidateScore += 1;
       console.log(candidateScore);
+      console.log('CORRECT!');
+    } else {
+      console.log(candidateScore);
+      console.log('INCORRECT!');
     }
   }
   
@@ -69,6 +77,7 @@ function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name //
   askQuestion();
+  console.log(`Candidate Name: ${candidateName}`);
   gradeQuiz(this.candidateAnswers);
 }
 
