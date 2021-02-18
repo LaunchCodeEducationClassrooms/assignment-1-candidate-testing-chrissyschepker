@@ -13,7 +13,7 @@ let questions = ['\n1) Who was the first American woman in space? ', '\n2) True 
 "\n4) Given the array [8, 'Orbit', 'Trajectory', 45], what entry is at index 2? ", 
 '\n5) What is the minimum crew size for the International Space Station(ISS)? '];
 
-let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3" ];
+let correctAnswers = ['Sally Ride', 'true', '40', 'Trajectory', '3' ];
 let candidateAnswers = [];
 
 
